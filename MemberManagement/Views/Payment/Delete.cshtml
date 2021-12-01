@@ -1,0 +1,18 @@
+﻿@model MemberManagement.Models.Payment
+
+@{
+
+    ViewBag.Title = "Delete Payer";
+}
+<h1>Confirm Deletion</h1>
+<h3>
+    @Model.First_Name &nbsp; @Model.Last_Name
+    
+</h3>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="@Model.PaymentID" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="Payment" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

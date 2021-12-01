@@ -1,0 +1,55 @@
+﻿@using MemberManagement.Models;
+@model Search
+@{
+    ViewBag.Title = "Search by";
+}
+
+<h2 class="col-sm-4">Search Member info by: </h2>
+<br />
+
+
+<form class="border-da" method="post" asp-controller="member" asp-action="SearchBy">
+
+
+    <div class="form-group col">
+
+        <div class="offset-sm-2 col-sm-4">
+            <select name="SearchType">
+                <option value="">Select a Search Type</option>
+                @foreach (string msg in ViewBag.SearchTypes)
+                {
+                <option value="@msg">@msg</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group col" id="To">
+        <div class="col-sm-2"><label asp-for="Text" class="control-label"></label></div>
+        <div class="col-sm-6"><input asp-for="Text" class="form-control" /></div>
+        <div class="col"><span asp-validation-for="Text" class="text-danger"></span></div>
+    </div>
+
+    <!--
+    <div class="form-group col">
+        <div class="offset-sm-2 col-sm-4">
+            <label asp-for="Text"></label>
+            @Html.TextBoxFor(m => m.Text)
+        </div>
+    </div>
+    -->
+
+
+    <div class="form-group col">
+        <div class="offset-sm-2 col-sm-4">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a asp-controller="member" asp-action="Index" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>
+
+<!--
+<span>
+    <a asp-controller="member" asp-action="Index" class="btn btn-primary">Cancel</a>
+
+</span> -->

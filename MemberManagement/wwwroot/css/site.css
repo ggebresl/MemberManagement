@@ -1,0 +1,77 @@
+﻿.btn{
+    width:120px;
+
+}
+.imageThumbnail{
+    height:200px;
+    width:auto;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: darkblue;
+    font-size: 20px;
+    /* Keyword values */
+    text-size-adjust: none;
+    text-size-adjust: auto;
+    /* <percentage> value */
+    text-size-adjust: 80%;
+    /* Global values */
+    text-size-adjust: inherit;
+    text-size-adjust: initial;
+    text-size-adjust: unset;
+}
+
+fieldset {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: .5em;
+}
+legend {
+    color: #931420;
+    font-weight: bold;
+    font-size: 85%;
+    margin-bottom: .5em
+}
+
+label, input, select {
+    font-size: 90%;
+}
+
+label {
+    float: left;
+    width: 12em;
+    text-align: right;
+}
+input, select {
+    width: 15em;
+    margin-left: .5em;
+    margin-bottom: .5em;
+}
+input:required, input[required] {
+        border:3px solid red;
+    }
+input:valid {
+    box-shadow:none;
+}
+br {
+  clear:both;
+}
+#buttons input::after {
+    width:10em;
+}
+.div {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+}
+
+
+/* Keyword values */
+text-size-adjust: none;
+text-size-adjust: auto;
+/* <percentage> value */
+text-size-adjust: 80%;
+/* Global values */
+text-size-adjust: inherit;
+text-size-adjust: initial;
+text-size-adjust: revert;
+text-size-adjust: unset;

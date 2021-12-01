@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA3X2QqyJ0G0GXiOwHnjvOlwAAAAACAAAAAAAQZgAAAAEAACAAAABvVrSVsBXFM8F8wsOZRezTA6yBID+ZpS6YhHLuuarxNAAAAAAOgAAAAAIAACAAAABXqWfeIC+WZx6K+rQzUuoLDJc31m7jo39QJBwtMhOh+IAAAADolTNwan+BkyoLOVuE7vHgOjyQ7Jx7ngUt9On+naQPhrWrR3mWZYb1qfrPkSXBFCVxZeEXzqLgm5v4ZtD+rHYn/QYHb4cq+33QvwpEfVyqy6GS/M+4NsangfsYPLhCkVaL4gDA6G6MglGzmEKtaQ9s8L5K5TND8XKAGqe2Chb9R0AAAAAAE8kGQKT055ErouDQ81YYfbb9jRPUaHwCb5/fKROCqN4h5SNilR0fqCkHpfsbeVGSAA/3Qzt03o+goRoTl5VD</EncryptedPassword>
+    <History>True|2021-11-20T22:02:33.8656333Z;True|2021-11-20T16:47:56.4682597-05:00;True|2021-11-19T20:59:30.9840056-05:00;True|2021-11-19T20:55:16.8801842-05:00;True|2021-11-19T20:29:51.9478435-05:00;True|2021-11-19T19:49:54.4521430-05:00;True|2021-11-19T11:07:09.0459539-05:00;True|2021-11-19T11:01:20.1501756-05:00;True|2021-11-19T09:40:29.5991634-05:00;True|2021-11-19T09:16:19.8097479-05:00;True|2021-11-19T09:07:28.9313894-05:00;True|2021-11-19T08:54:45.8512301-05:00;True|2021-11-18T20:57:22.5131098-05:00;True|2021-11-18T20:55:00.3330515-05:00;True|2021-11-18T20:51:20.1566390-05:00;True|2021-11-18T20:47:57.5044210-05:00;True|2021-11-18T20:45:33.1661134-05:00;True|2021-11-18T20:42:14.2183515-05:00;True|2021-11-18T20:23:22.8527415-05:00;True|2021-11-18T20:20:06.0249185-05:00;True|2021-11-18T19:53:58.7329608-05:00;True|2021-11-18T19:10:01.4904310-05:00;</History>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="TigrayComAppDB">
+      <Value>Data Source=tcp:tigraycomdbdbserver.database.windows.net,1433%3bInitial Catalog=TigrayComDB%3bUser Id=ggebresl%40tigraycomdbdbserver%3bPassword=Kidan123</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="MemberManagement.AppDbContext">
+      <Value>Data Source=tcp:tigraycomdbdbserver.database.windows.net,1433%3bInitial Catalog=TigrayComDB%3bUser Id=ggebresl%40tigraycomdbdbserver%3bPassword=Kidan123</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

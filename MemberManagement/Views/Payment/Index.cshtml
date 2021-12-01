@@ -1,0 +1,104 @@
+﻿@model IEnumerable<MemberManagement.Models.Payment>
+
+@{
+    ViewData["Title"] = "Payment";
+}
+
+<h5>List of your payments</h5>
+
+<div class="table-responsive-sm">
+    <table class="table table-sm table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    Spouse Name
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    Payment Reason
+                </th>
+                <th>
+                    Payment Type
+                </th>
+                <th>
+                    Receipt #
+                </th>
+                <th>
+                    Received By
+                </th>
+                <th>
+                    Is a Member?
+                </th>
+                <th>
+                    Payment Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.First_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Spouse_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Payment_Reason)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Payment_Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Receipt_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.ReceivedBy)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.IsMember)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Payment_Date)
+                </td>
+
+                <td>
+                    <a asp-controller="Payment" asp-action="Edit"
+                       asp-route-id="@item.PaymentID">Edit</a>  |
+                    <a asp-controller="Payment" asp-action="Delete"
+                       asp-route-id="@item.PaymentID">Delete</a>
+                </td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

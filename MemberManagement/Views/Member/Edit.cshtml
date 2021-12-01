@@ -1,0 +1,94 @@
+﻿@model MemberManagement.Models.Member
+
+@{
+    string title = ViewBag.Action + " Member";
+    ViewBag.Title = title;
+}
+<h2>@ViewBag.Title</h2>
+
+<form asp-action="Edit" method="post" class="mt-3">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="LoginID" />
+
+    <div class="form-group">
+        <label asp-for="First_Name">First_Name</label>
+        <input asp-for="First_Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Last_Name">Last_Name</label>
+        <input asp-for="Last_Name" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender">Gender</label>
+        <input asp-for="Gender" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Job">Job</label>
+        <input asp-for="Job" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Age">Age</label>
+        <input asp-for="Age" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Birth_Date">Birth_Date</label>
+        <input asp-for="Birth_Date" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Cell_Phone">Cell_Phone</label>
+        <input asp-for="Cell_Phone" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Member_Status">Status</label>
+        <input asp-for="Member_Status" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Marital_Status">Marital Status</label>
+        <input asp-for="Marital_Status" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Citizen">Citizen</label>
+        <input asp-for="Citizen" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Birth_Place">birth_place</label>
+        <input asp-for="Birth_Place" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="US_Arrival_Date">US Arrival Date</label>
+        <input asp-for="US_Arrival_Date" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Member_Start_Date">Start Date</label>
+        <input asp-for="Member_Start_Date" class="form-control">
+    </div>
+    <div class="form-group">
+        <label asp-for="Member_End_Date">End Date</label>
+        <input asp-for="Member_End_Date" class="form-control">
+    </div>
+
+    <input type="hidden" asp-for="LoginID" />
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-controller="Member" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

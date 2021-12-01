@@ -1,0 +1,20 @@
+﻿@model MemberManagement.Models.Member
+
+@{
+
+    ViewBag.Title = "Delete Payermember";
+}
+<h1>Confirm Deletion</h1>
+<h3>
+    @Model.First_Name &nbsp; @Model.Last_Name
+
+</h3>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="@Model.MemberID" />
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+    <a asp-controller="member" asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
+
+<!--h1 style="color:blue;" --> 

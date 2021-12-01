@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "UploadFiles";
+}
+
+<h2>Uplaod a file or multiple files into the selected folder:</h2>
+<hr />
+
+<form method="post" enctype="multipart/form-data" asp-controller="Payment" asp-action="UploadFiles">
+    <input type="file" name="filestoupload" multiple />
+    <select name="FolderType">
+        <option value="">Select folder Name</option>
+        @foreach (string folderName in ViewBag.message)
+        {
+            <option value="@folderName">@folderName</option>
+        }
+    </select>
+    <input type="submit" value="Upload files" />
+    
+</form>
+
+<br />
+<br />
+<div>
+    <a asp-action="Index"><strong>Back to List</strong></a>
+</div>

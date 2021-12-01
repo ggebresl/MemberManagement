@@ -1,0 +1,102 @@
+﻿@model MemberManagement.Models.Payment
+
+@{
+    string title = ViewBag.Action + " Payment";
+    ViewBag.Title = title;
+}
+<h2>@ViewBag.Title</h2>
+<hr />
+
+
+
+
+<form class="border-da" asp-controller="payment" asp-action="Add" method="post">
+    <fieldset class="border p-5">
+
+        <legend class="w-auto" style="color: #931420;">Payment Information</legend>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="PaymentID" />
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="First_Name"></label></div>
+            <div class="col-sm-4"><input asp-for="First_Name" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="First_Name" class="text-danger"></span></div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Last_Name"></label></div>
+            <div class="col-sm-4"><input asp-for="Last_Name" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Last_Name" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Spouse_Name"></label></div>
+            <div class="col-sm-4"><input asp-for="Spouse_Name" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Spouse_Name" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Phone"></label></div>
+            <div class="col-sm-4"><input asp-for="Phone" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Phone" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Email"></label></div>
+            <div class="col-sm-4"><input asp-for="Email" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Email" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Amount"></label></div>
+            <div class="col-sm-4"><input asp-for="Amount" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Amount" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Payment_Reason"></label></div>
+            <div class="col-sm-4"><input asp-for="Payment_Reason" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Payment_Reason" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Payment_Type"></label></div>
+            <div class="col-sm-4"><input asp-for="Payment_Type" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Payment_Type" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Receipt_Number"></label></div>
+            <div class="col-sm-4"><input asp-for="Receipt_Number" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Receipt_Number" class="text-danger"></span></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="ReceivedBy"></label></div>
+            <div class="col-sm-4"><input asp-for="ReceivedBy" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="ReceivedBy" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="IsMember"></label></div>
+            <div class="col-sm-4"><input asp-for="IsMember" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="IsMember" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Payment_Date"></label></div>
+            <div class="col-sm-4"><input asp-for="Payment_Date" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Payment_Date" class="text-danger"></span></div>
+        </div>
+        <br />
+        <div class="form-group row">
+            <div class="col-sm-2 col-sm-4">
+                <button type="submit" class="btn btn-primary"><strong>Save</strong></button>
+                <a asp-controller="payment" asp-action="Index" class="btn btn-primary">Cancel</a>
+            </div>
+        </div>
+    </fieldset>
+
+
+</form>
+

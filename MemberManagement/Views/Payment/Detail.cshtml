@@ -1,0 +1,97 @@
+﻿@model MemberManagement.Models.Payment
+
+@{
+    ViewBag.Title = "Payment  Detail";
+}
+   <h1>Payment Detail</h1>
+   <table class="table table-bordered table-striped">
+       <tr>
+
+           <td>
+               Payment ID
+           </td>
+           <td>
+               @Model.PaymentID
+           </td>
+       </tr>
+       <tr>
+           <td>
+               First Name
+           </td>
+           <td>
+               @Model.First_Name
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Last Name
+           </td>
+           <td>
+               @Model.Last_Name
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Phone
+           </td>
+           <td>
+               @Model.Phone
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Email
+           </td>
+           <td>
+               @Model.Email
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Amount
+           </td>
+           <td>
+               @Model.Amount
+           </td>
+       </tr>
+       <tr>
+           <td>
+               Payment Type
+           </td>
+           <td>
+               @Model.Payment_Type
+           </td>
+       </tr>
+
+       <tr>
+           <td>
+               Receipt #
+           </td>
+           <td>
+               @Model.Receipt_Number
+           </td>
+       </tr>
+
+       <tr>
+           <td>
+               Received By
+           </td>
+           <td>
+               @Model.ReceivedBy
+           </td>
+       </tr>
+
+       <tr>
+           <td>
+               Payment Date
+           </td>
+           <td>
+               @Model.Payment_Date
+           </td>
+       </tr>
+
+   </table>
+<a asp-controller="Payment" asp-action="index"
+    class="btn btn-primary">Payment</a>
+<a asp-controller="Payment" asp-action="index"
+   class="btn btn-primary">Clear</a>

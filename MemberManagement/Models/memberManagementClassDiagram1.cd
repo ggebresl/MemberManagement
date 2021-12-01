@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MemberManagement.Models.Address">
+    <Position X="3.75" Y="0.5" Width="2" />
+    <AssociationLine Name="MemberAddresses" Type="MemberManagement.Models.MemberAddress" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="3.142" />
+        <Point X="5" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAABACIAAAIAAAAQAIAAAAAAAAABACgAAA=</HashCode>
+      <FileName>Models\Address.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MemberAddresses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MemberManagement.Models.Child">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <InheritanceLine Type="MemberManagement.Models.Member" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.125" Y="5.642" />
+        <Point X="2.125" Y="5.808" />
+        <Point X="2" Y="5.808" />
+        <Point X="2" Y="6" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAACAEAAAA=</HashCode>
+      <FileName>Models\Child.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MemberManagement.Models.Member">
+    <Position X="1" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAEIAhCAgAACAAMAQAAAAAAGCAAAAAAAACACDAIg=</HashCode>
+      <FileName>Models\Member.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MemberAddresses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MemberManagement.Models.Payment">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAQAACAAgAAAAAACgICAABEAABAAAAAAICAAAAA=</HashCode>
+      <FileName>Models\Payment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Userlogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MemberManagement.Models.Userlogin">
+    <Position X="7.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAIAQAAAAAAAAEAAAACAAAAIACAAAA=</HashCode>
+      <FileName>Models\Userlogin.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MemberAddresses" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MemberManagement.Models.MemberAddress">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQBEIAAACAAAAAAABAAA=</HashCode>
+      <FileName>Models\MemberAddress.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Member" />
+      <Property Name="Address" />
+      <Property Name="Userlogin" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,120 @@
+﻿@model IEnumerable<MemberManagement.Models.Member>
+
+@{
+    ViewData["Title"] = "Member";
+}
+
+<h5>List of Members</h5>
+<div class="table-responsive-sm">
+    <table class="table table-sm table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">
+                    First Name
+                </th>
+                <th scope="col">
+                    Last Name
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Job)
+                </th>
+                <th scope="col">
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th scope="col">
+                    Family Size
+                </th>
+                <th scope="col">
+                    Phone
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th scope="col">
+                    Member Status
+                </th>
+                <th scope="col">
+                    Marital Status
+                </th>
+                <th scope="col">
+                    Citzen
+                </th>
+                <th scope="col">
+                    Birth Place
+                </th>
+                <th scope="col">
+                    US Arrival Date
+                </th>
+                <th scope="col">
+                    Start Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.First_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Last_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Job)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Birth_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Cell_Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Member_Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Marital_Status)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(model => item.Citizen)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Birth_Place)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.US_Arrival_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Member_Start_Date)
+                </td>
+
+                <td>
+                    <a asp-controller="Member" asp-action="Edit"
+                       asp-route-id="@item.MemberID">Edit</a>  |
+                    <a asp-controller="Member" asp-action="Delete"
+                       asp-route-id="@item.MemberID">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-controller="Payment" asp-action="list"><strong>Back to List of Payers</strong></a>
+</div>
+
+

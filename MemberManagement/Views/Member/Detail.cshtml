@@ -1,0 +1,67 @@
+﻿@model MemberManagement.Models.Userlogin
+
+@{
+    ViewBag.Title = "Registered User Detail(s)";
+}
+   <h1> Registerd Users Detail(s)</h1>
+    <table class="table table-bordered table-striped">
+        <tr>
+
+            <td>
+                Login ID
+            </td>
+            <td>
+                @Model.LoginID
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Username
+            </td>
+            <td>
+                @Model.Username
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password
+            </td>
+            <td>
+                @Model.Password
+            </td>
+        </tr>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                @Model.Firstname
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name
+            </td>
+            <td>
+                @Model.Lastname
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone
+            </td>
+            <td>
+                @Model.Phone
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                @Model.Email
+            </td>
+        </tr>
+    </table>
+    <a asp-controller="Member" asp-action="listregisteredusers" class="btn btn-primary">Registerd Users</a>
+<a asp-controller="Member" asp-action="listregisteredusers"class="btn btn-primary">Cancel</a>

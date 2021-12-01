@@ -1,0 +1,178 @@
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<User> signInManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+        <script src="~/js/ChangeType.js"></script>
+        <script src="~/js/CustomScript.js"></script>
+    </environment>
+    <!--
+     <environment exclude="Production">
+
+         <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+         <link rel="stylesheet" href="~/css/site.css" />
+
+         <script src="~/lib/jquery/jquery.js"></script>
+         <script src="~/lib/popper.js/cjs/popper.js"></script>
+         <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+         <script src="~/lib/jquery/jquery.js"></script>
+         <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+         <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+         <script src="~/js/site.js" asp-append-version="true"></script>
+     </environment>
+        -->
+        <!-- <link href="~/css/site.css" rel="stylesheet" /> -->
+        <title>@ViewBag.Title</title>
+</head> 
+
+<body>
+    <header>
+       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container">
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+                <ul class="navbar-nav ml-auto">
+
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <a asp-action="index" asp-controller="payment" class="nav-link"></a>
+                        </li>
+
+
+                    }
+
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item">
+                            <a asp-action="ListRegisteredUsers" asp-controller="member" class="nav-link"><strong>Registered Users</strong></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="index" asp-controller="member" class="nav-link"><strong>List Members</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="list" asp-controller="payment" class="nav-link"><strong>List Payers</strong></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="SendEmail" asp-controller="payment" class="nav-link"><strong>Email</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="SendSmsText" asp-controller="payment" class="nav-link"><strong>Text</strong></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="UploadFiles" asp-controller="payment" class="nav-link"><strong>File Upload</strong></a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <strong>Manage</strong>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdwonMenuLink">
+                                <a asp-action="ListUsers" asp-controller="Administration"
+                                   class="dropdown-item"><strong>Users</strong></a>
+
+                                <a asp-action="ListRoles" asp-controller="Administration"
+                                   class="dropdown-item"><strong>Roles</strong></a>
+
+                                <a asp-action="ListMemberPayers" asp-controller="payment"
+                                   class="dropdown-item"><strong>List Member Payers</strong></a>
+                                <a asp-action="ListNonMemberPayers" asp-controller="payment"
+                                   class="dropdown-item"><strong>List Non Member Payers</strong></a>
+
+                                <a asp-action="Add" asp-controller="payment"
+                                   class="dropdown-item"><strong>Add New Payer</strong></a>
+
+
+                                <a asp-action="create" asp-controller="member"
+                                   class="dropdown-item"><strong>Add New Member</strong></a>
+
+                                <a asp-action="SearchBy" asp-controller="member"
+                                   class="dropdown-item"><strong>Search member by ..</strong> </a>
+
+                                <a asp-action="SearchTotalAmountBy" asp-controller="payment"
+                                   class="dropdown-item"><strong>Search Total Amount by ..</strong> </a>
+
+                                <a asp-action="ForgotPassword" asp-controller="account"
+                                   class="dropdown-item"><strong>Forgot Password</strong> </a>
+
+
+                            </div>
+                        </li>
+                    }
+                </ul>
+
+
+
+                <ul class="navbar-nav ml-auto">
+                    @if (signInManager.IsSignedIn(User))
+                    {
+
+                        //signed-in user- Log Out button and username
+                        <li class="nav-item">
+                            <form method="post" asp-action="logout" asp-controller="account">
+                                <button type="submit" class="nav-link btn btn-link py-0"
+                                        style="width:auto">
+                                    <strong>Logout @User.Identity.Name</strong>
+                                </button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+
+                        //gett current action
+                        var action = ViewContext.RouteData.Values["action"]?.ToString();
+
+                        //anonymous  user - Register link and Log in button
+                        <li class="nav-item @(ViewContext.RouteData.Values["Action"].ToString() == "Register" ? "active" : "")">
+                            <a asp-action="register" asp-controller="account" asp-area="" class="nav-link">Register</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a asp-action="login" asp-controller="account" asp-area="" class="nav-link">Log In</a>
+                        </li>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts", required: true);
+    }
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - Tigray Community Boston, MA
+
+        </div>
+    </footer>
+</body>
+</html>
+

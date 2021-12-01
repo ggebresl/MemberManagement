@@ -1,0 +1,160 @@
+﻿@model MemberManagement.ViewModels.MemberAddressViewModel
+
+@{
+    ViewData["Title"] = "Create";
+    // var Address = ViewBag.Address;
+}
+
+
+<h2>Create Member</h2>
+
+<h5>@ViewBag.Info</h5>
+
+<form class="border-da" asp-controller="Member" asp-action="Create" method="post">
+    <fieldset class="border p-5">
+
+        <legend class="w-auto" style="color: #931420;">Member Information</legend>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Member.MemberID" />
+        <input type="hidden" asp-for="Member.AdressID" />
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.First_Name"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.First_Name" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.First_Name" class="text-danger"></span></div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Last_Name"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Last_Name" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Last_Name" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Gender"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Gender" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Gender" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Job"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Job" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Job" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Age"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Age" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Age" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Birth_Date"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Birth_Date" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Birth_Date" class="text-danger"></span></div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Cell_Phone"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Cell_Phone" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Cell_Phone" class="text-danger"></span></div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Email"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Email" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Email" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Member_Status"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Member_Status" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Member_Status" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Marital_Status"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Marital_Status" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Marital_Status" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Citizen"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Citizen" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Citizen" class="text-danger"></span></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Birth_Place"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Birth_Place" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Birth_Place" class="text-danger"></span></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.US_Arrival_Date"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.US_Arrival_Date" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.US_Arrival_Date" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Member.Member_Start_Date"></label></div>
+            <div class="col-sm-4"><input asp-for="Member.Member_Start_Date" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Member.Member_Start_Date" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <input type="hidden" asp-for="Address.AdressID" />
+            <input type="hidden" asp-for="Address.Apt" />
+            <div class="col-sm-2"><label asp-for="Address.Street_Addres"></label></div>
+            <div class="col-sm-4"><input asp-for="Address.Street_Addres" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Address.Street_Addres" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Address.City"></label></div>
+            <div class="col-sm-4"><input asp-for="Address.City" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Address.City" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Address.State"></label></div>
+            <div class="col-sm-4"><input asp-for="Address.State" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Address.State" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Address.Zip_Code"></label></div>
+            <div class="col-sm-4"><input asp-for="Address.Zip_Code" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Address.Zip_Code" class="text-danger"></span></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-2"><label asp-for="Address.Country"></label></div>
+            <div class="col-sm-4"><input asp-for="Address.Country" class="form-control" /></div>
+            <div class="col"><span asp-validation-for="Address.Country" class="text-danger"></span></div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-controller="member" asp-action="Index" class="btn btn-primary">Cancel</a>
+            </div>
+        </div>
+    </fieldset>
+</form>
+<!-- 
+<div class="row">
+    <div class="offset-2 col-sm-4">
+        To add a child, press the button: 
+        <a asp-action="CreateChild">Add</a>
+    </div>
+</div> 
+-->
+
+<div>
+    <a asp-action="Index"><strong>>Back to List</strong></a>
+</div>
+

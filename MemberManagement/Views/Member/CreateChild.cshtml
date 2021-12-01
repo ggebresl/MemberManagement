@@ -1,0 +1,157 @@
+﻿@model MemberManagement.Models.Child
+
+@{
+    ViewData["Title"] = "Add @Model";
+    // var Address = ViewBag.Address;
+}
+<form class="border-da" asp-controller="Member" asp-action="CreateChild" method="post">
+    <fieldset class="border p-5">
+        <legend class="w-auto" style="color: #931420;">Child Information</legend>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group row">
+            <input type="hidden" asp-for="@Model.MemberID" />
+            <input type="hidden" asp-for="@Model.MemberID" />
+            
+
+            <label asp-for="@Model.First_Name" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.First_Name" class="form-control" />
+                <span asp-validation-for="@Model.First_Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Middle_Name" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Middle_Name" class="form-control" />
+                <span asp-validation-for="@Model.Middle_Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="@Model.Last_Name" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Last_Name" class="form-control" />
+                <span asp-validation-for="@Model.Last_Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Mother_Name" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Mother_Name" class="form-control" />
+                <span asp-validation-for="@Model.Mother_Name" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Cell_Phone" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Cell_Phone" class="form-control" />
+                <span asp-validation-for="@Model.Cell_Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Home_Phone" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Home_Phone" class="form-control" />
+                <span asp-validation-for="@Model.Home_Phone" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label asp-for="@Model.Email" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Email" class="form-control" />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="@Model.Age" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Age" class="form-control" />
+                <span asp-validation-for="@Model.Age" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label asp-for="@Model.Job" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Job" class="form-control" />
+                <span asp-validation-for="@Model.Job" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Gender" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Gender" class="form-control" />
+                <span asp-validation-for="@Model.Gender" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Grade" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Grade" class="form-control" />
+                <span asp-validation-for="@Model.Grade" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Birth_Place" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Birth_Place" class="form-control" />
+                <span asp-validation-for="@Model.Birth_Place" class="text-danger"></span>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label asp-for="@Model.US_Arrival_Date" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.US_Arrival_Date" class="form-control" />
+                <span asp-validation-for="@Model.US_Arrival_Date" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Member_Start_Date" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Member_Start_Date" class="form-control" />
+                <span asp-validation-for="@Model.Member_Start_Date" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.Member_End_Date" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.Member_End_Date" class="form-control" />
+                <span asp-validation-for="@Model.Member_End_Date" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label asp-for="@Model.BirthDate" class="col-sm-2 col-form-lablel"></label>
+            <div class="col-sm-10">
+                <input asp-for="@Model.BirthDate" class="form-control" />
+                <span asp-validation-for="@Model.BirthDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </fieldset>
+
+</form>
+
+<div class="row">
+    <div class="offset-2 col-sm-4">
+        To add a child, click on the next button:
+        <a asp-action="CreateChild">Add</a>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
